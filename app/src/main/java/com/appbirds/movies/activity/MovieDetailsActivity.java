@@ -136,7 +136,7 @@ public class MovieDetailsActivity extends BaseActivity {
         } else
             progress_bar.setVisibility(View.GONE);
 
-        if (movieDetail.getProduction_companies() != null && movieDetail.getProduction_companies().get(0) != null) {
+        if (movieDetail.getProduction_companies() != null && !movieDetail.getProduction_companies().isEmpty() && movieDetail.getProduction_companies().get(0) != null) {
             if (!TextUtils.isEmpty(movieDetail.getProduction_companies().get(0).getLogo_path()))
                 Glide.with(this)
                         .load(Constants.IMAGE_URL + movieDetail.getProduction_companies().get(0).getLogo_path())

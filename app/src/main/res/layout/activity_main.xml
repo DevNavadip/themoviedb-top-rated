@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_000000"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_70_dp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtAppBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/movies"
+            android:textColor="@color/white"
+            android:textSize="@dimen/common_25_sp" />
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rlServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:visibility="gone"
+                    tools:listitem="@layout/item_top_rated_movies" />
+
+                <TextView
+                    android:id="@+id/textViewServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/no_movies_found"
+                    android:textSize="@dimen/common_20_sp"
+                    android:visibility="gone" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmerFrameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <!-- Adding 15 rows of placeholders -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+
+                        <include layout="@layout/shimmer_placeholder_layout" />
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

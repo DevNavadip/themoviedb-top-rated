@@ -190,9 +190,6 @@ public class MainActivity extends BaseActivity implements ItemListener, SwipeRef
                 totalItemCount = linearLayoutManager.getItemCount();
                 int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
 
-                Log.e(TAG, "onScrolled: visibleItemCount:" + visibleItemCount);
-                Log.e(TAG, "onScrolled: firstVisibleItemPosition:" + firstVisibleItemPosition);
-                Log.e(TAG, "onScrolled: totalItemCount:" + totalItemCount);
                 if ((visibleItemCount + firstVisibleItemPosition) > totalItemCount - 1) {
 
                     if (!isLoadMore) {
